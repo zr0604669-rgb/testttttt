@@ -9,8 +9,8 @@ function h($s) { return htmlspecialchars($s, ENT_QUOTES); }
 function formatBytes($size) {
     if($size < 1024) return $size.' B';
     $units = ['KB','MB','GB','TB'];
-    for($i = 0; $size >= 1024 && $i < 4; $i++) $size /= 1024;
-    return round($size, 1).' '.$units[$i];
+    for($i = 0; $size >= 1024 && $i < 3; $i++) $size /= 1024;
+    return round($size, 2).' '.$units[$i];
 }
 
 function formatDate($timestamp) {
